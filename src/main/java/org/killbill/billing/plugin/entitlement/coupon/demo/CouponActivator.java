@@ -39,7 +39,7 @@ public class CouponActivator extends KillbillActivatorBase {
 
         logService.log(LogService.LOG_INFO, "Starting " + PLUGIN_NAME);
 
-        final EntitlementPluginApi entitlementPluginApi = new CouponDemoEntitlementPluginApi(configProperties.getProperties(), logService);
+        final EntitlementPluginApi entitlementPluginApi = new CouponDemoEntitlementPluginApi(configProperties.getProperties(), killbillAPI, logService);
         registerEntitlementPluginApi(context, entitlementPluginApi);
 
         // Register a servlet (optional)
