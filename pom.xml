@@ -22,10 +22,10 @@
     <parent>
         <artifactId>killbill-oss-parent</artifactId>
         <groupId>org.kill-bill.billing</groupId>
-        <version>0.24-SNAPSHOT</version>
+        <version>0.140.2</version>
     </parent>
-    <groupId>org.kill-bill.billing.plugin.java.entitlement</groupId>
-    <artifactId>coupon-demo</artifactId>
+    <groupId>org.kill-bill.billing.plugin.java</groupId>
+    <artifactId>coupon-demo-plugin</artifactId>
     <name>Test Plugin for EntitlementPluginApi</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
@@ -41,6 +41,10 @@
         <url>https://github.com/killbill/killbill-coupon-plugin-demo/issues</url>
     </issueManagement>
     <dependencies>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-api</artifactId>
@@ -67,6 +71,10 @@
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-platform-osgi-bundles-lib-slf4j-osgi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.kill-bill.commons</groupId>
+            <artifactId>killbill-clock</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -165,7 +173,4 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <killbill.version>0.15.1-SNAPSHOT</killbill.version>
-    </properties>
 </project>

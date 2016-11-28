@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2015 The Billing Project, LLC
+ * Copyright 2014-2016 The Billing Project, LLC
  *
  * The Billing Project licenses this file to you under the Apache License, version 2.0
  * (the "License"); you may not use this file except in compliance with the
@@ -16,11 +16,11 @@
 
 package org.killbill.billing.plugin.entitlement.coupon.demo.catalog;
 
+import java.math.BigDecimal;
+
 import org.killbill.billing.catalog.api.Currency;
 import org.killbill.billing.catalog.api.PlanPhasePriceOverride;
 import org.killbill.billing.catalog.api.PlanPhaseSpecifier;
-
-import java.math.BigDecimal;
 
 public class DefaultPlanPhasePriceOverride implements PlanPhasePriceOverride {
 

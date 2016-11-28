@@ -16,37 +16,37 @@
 
 package org.killbill.billing.plugin.entitlement.coupon.demo;
 
-import org.joda.time.LocalDate;
+import java.util.List;
+
+import org.killbill.billing.catalog.api.BillingActionPolicy;
 import org.killbill.billing.catalog.api.PlanPhasePriceOverride;
-import org.killbill.billing.catalog.api.PlanPhaseSpecifier;
+import org.killbill.billing.entitlement.api.BaseEntitlementWithAddOnsSpecifier;
 import org.killbill.billing.entitlement.plugin.api.PriorEntitlementResult;
 import org.killbill.billing.payment.api.PluginProperty;
 
-import java.util.List;
-
 public class DefaultPriorEntitlementResult implements PriorEntitlementResult {
 
-    private List<PlanPhasePriceOverride> overrides;
+    private List<BaseEntitlementWithAddOnsSpecifier> overrides;
 
-    public DefaultPriorEntitlementResult(List<PlanPhasePriceOverride> overrides) {
+    public DefaultPriorEntitlementResult(List<BaseEntitlementWithAddOnsSpecifier> overrides) {
         this.overrides = overrides;
     }
+
     @Override
     public boolean isAborted() {
         return false;
     }
+
     @Override
-    public PlanPhaseSpecifier getAdjustedPlanPhaseSpecifier() {
+    public BillingActionPolicy getAdjustedBillingActionPolicy() {
         return null;
     }
+
     @Override
-    public LocalDate getAdjustedEffectiveDate() {
-        return null;
-    }
-    @Override
-    public List<PlanPhasePriceOverride> getAdjustedPlanPhasePriceOverride() {
+    public Iterable<BaseEntitlementWithAddOnsSpecifier> getAdjustedBaseEntitlementWithAddOnsSpecifiers() {
         return overrides;
     }
+
     @Override
     public Iterable<PluginProperty> getAdjustedPluginProperties() {
         return null;

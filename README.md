@@ -1,7 +1,19 @@
 # Overview
 
+Kill Bill coupon plugin (demo).
+
+Release builds are available on [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.kill-bill.billing.plugin.java%22%20AND%20a%3A%22coupon-demo-plugin%22) with coordinates `org.kill-bill.billing.plugin.java:coupon-demo-plugin`.
+
+## Kill Bill compatibility
+
+| Plugin version | Kill Bill version |
+| -------------: | ----------------: |
+| 0.0.y          | 0.18.z            |
+
+## Description
+
 This plugin highlights the use the of the EntitlementPluginApi as a means to create a coupon plugin. The current functionality is very rudimentary: The plugin will register itself and therefore be called for each subscription operation (create new subscription, change plan, cancellation, pause, resume, ..). In order to keep it very simple, the plugin will:
-* Only look for subscription creation (base plan only)
+* Only look for subscription creation
 * Look for a property `killbill-coupon-demo:coupon` and interpet the value as a BigDecimal that will be used to override the price of the last phase where a recurring price already exists.
 * Make use of the catalog price override functionality to override the price on the fly (discounted coupon price)
 
