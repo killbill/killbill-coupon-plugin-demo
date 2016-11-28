@@ -27,7 +27,7 @@
     <groupId>org.kill-bill.billing.plugin.java</groupId>
     <artifactId>coupon-demo-plugin</artifactId>
     <name>Test Plugin for EntitlementPluginApi</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>bundle</packaging>
     <description>Test Plugin for EntitlementPluginApi</description>
     <url>http://github.com/killbill/killbill-coupon-plugin-demo</url>
