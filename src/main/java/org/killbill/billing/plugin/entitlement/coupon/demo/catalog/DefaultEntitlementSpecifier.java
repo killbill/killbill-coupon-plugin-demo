@@ -38,6 +38,16 @@ public class DefaultEntitlementSpecifier implements EntitlementSpecifier {
     }
 
     @Override
+    public Integer getBillCycleDay() {
+        return null;
+    }
+
+    @Override
+    public String getExternalKey() {
+        return null;
+    }
+
+    @Override
     public List<PlanPhasePriceOverride> getOverrides() {
         return overrides;
     }

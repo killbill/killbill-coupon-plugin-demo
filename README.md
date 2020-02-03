@@ -9,15 +9,19 @@ Release builds are available on [Maven Central](http://search.maven.org/#search%
 | Plugin version | Kill Bill version |
 | -------------: | ----------------: |
 | 0.0.y          | 0.18.z            |
+| 0.0.y          | 0.20.z            |
+| 0.1.y          | 0.22.z            |
 
 ## Description
 
 This plugin highlights the use the of the EntitlementPluginApi as a means to create a coupon plugin. The current functionality is very rudimentary: The plugin will register itself and therefore be called for each subscription operation (create new subscription, change plan, cancellation, pause, resume, ..). In order to keep it very simple, the plugin will:
 * Only look for subscription creation
-* Look for a property `killbill-coupon-demo:coupon` and interpet the value as a BigDecimal that will be used to override the price of the last phase where a recurring price already exists.
+* Look for a property `killbill-coupon-demo:coupon` and interpret the value as a BigDecimal that will be used to override the price of the last phase where a recurring price already exists.
 * Make use of the catalog price override functionality to override the price on the fly (discounted coupon price)
 
-For example:
+
+Assuming an `Account` with id `1f979085-1765-471b-878a-5f640db4d831` was created and the `bob/lazar` tenant was configured with a catalog with a `planName=sports-monthly`:
+
 ```
 curl -v \
      -u admin:password \
@@ -26,7 +30,7 @@ curl -v \
      -H "Content-Type: application/json" \
      -H "X-Killbill-CreatedBy: demo" \
      -X POST \
-     --data-binary '{"accountId":"80d20404-a8d6-4c7f-8335-361cfd8392b7","externalKey":"foo","productName":"Sports","productCategory":"BASE","billingPeriod":"MONTHLY","priceList":"DEFAULT"}' \
+     --data-binary '{"accountId":"1f979085-1765-471b-878a-5f640db4d831", "externalKey":"foo", "bundleExternalKey":"bar", "planName":"sports-monthly"}' \
      "http://127.0.0.1:8080/1.0/kb/subscriptions?pluginProperty=killbill-coupon-demo:coupon%3D108.7"
 ```
 

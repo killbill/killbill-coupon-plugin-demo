@@ -24,21 +24,21 @@ import org.killbill.billing.entitlement.api.EntitlementSpecifier;
 
 public class DefaultBaseEntitlementWithAddOnsSpecifier implements BaseEntitlementWithAddOnsSpecifier {
 
-    private final UUID bundleId;
-    private final String externalKey;
+    private final UUID                           bundleId;
+    private final String                         bundleExternalKey;
     private final Iterable<EntitlementSpecifier> entitlementSpecifier;
-    private final LocalDate entitlementEffectiveDate;
-    private final LocalDate billingEffectiveDate;
-    private final boolean isMigrated;
+    private final LocalDate                      entitlementEffectiveDate;
+    private final LocalDate                      billingEffectiveDate;
+    private final boolean                        isMigrated;
 
     public DefaultBaseEntitlementWithAddOnsSpecifier(final UUID bundleId,
-                                                     final String externalKey,
+                                                     final String bundleExternalKey,
                                                      final Iterable<EntitlementSpecifier> entitlementSpecifier,
                                                      final LocalDate entitlementEffectiveDate,
                                                      final LocalDate billingEffectiveDate,
                                                      final boolean isMigrated) {
         this.bundleId = bundleId;
-        this.externalKey = externalKey;
+        this.bundleExternalKey = bundleExternalKey;
         this.entitlementSpecifier = entitlementSpecifier;
         this.entitlementEffectiveDate = entitlementEffectiveDate;
         this.billingEffectiveDate = billingEffectiveDate;
@@ -51,9 +51,10 @@ public class DefaultBaseEntitlementWithAddOnsSpecifier implements BaseEntitlemen
     }
 
     @Override
-    public String getExternalKey() {
-        return externalKey;
+    public String getBundleExternalKey() {
+        return bundleExternalKey;
     }
+
 
     @Override
     public Iterable<EntitlementSpecifier> getEntitlementSpecifier() {
