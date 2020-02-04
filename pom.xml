@@ -22,12 +22,12 @@
     <parent>
         <artifactId>killbill-oss-parent</artifactId>
         <groupId>org.kill-bill.billing</groupId>
-        <version>0.140.3</version>
+        <version>0.143.50</version>
     </parent>
     <groupId>org.kill-bill.billing.plugin.java</groupId>
     <artifactId>coupon-demo-plugin</artifactId>
     <name>Test Plugin for EntitlementPluginApi</name>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <description>Test Plugin for EntitlementPluginApi</description>
     <url>http://github.com/killbill/killbill-coupon-plugin-demo</url>

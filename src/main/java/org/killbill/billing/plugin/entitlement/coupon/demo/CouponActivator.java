@@ -20,7 +20,6 @@ package org.killbill.billing.plugin.entitlement.coupon.demo;
 import org.killbill.billing.entitlement.plugin.api.EntitlementPluginApi;
 import org.killbill.billing.osgi.api.OSGIPluginProperties;
 import org.killbill.billing.osgi.libs.killbill.KillbillActivatorBase;
-import org.killbill.billing.osgi.libs.killbill.OSGIKillbillEventDispatcher;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.log.LogService;
 
@@ -39,7 +38,7 @@ public class CouponActivator extends KillbillActivatorBase {
 
         logService.log(LogService.LOG_INFO, "Starting " + PLUGIN_NAME);
 
-        final EntitlementPluginApi entitlementPluginApi = new CouponDemoEntitlementPluginApi(clock, killbillAPI, logService);
+        final EntitlementPluginApi entitlementPluginApi = new CouponDemoEntitlementPluginApi(clock, killbillAPI);
         registerEntitlementPluginApi(context, entitlementPluginApi);
 
         // Register a servlet (optional)

@@ -17,10 +17,12 @@
 package org.killbill.billing.plugin.entitlement.coupon.demo.catalog;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.killbill.billing.catalog.api.Currency;
 import org.killbill.billing.catalog.api.PlanPhasePriceOverride;
 import org.killbill.billing.catalog.api.PlanPhaseSpecifier;
+import org.killbill.billing.catalog.api.UsagePriceOverride;
 
 public class DefaultPlanPhasePriceOverride implements PlanPhasePriceOverride {
 
@@ -69,5 +71,10 @@ public class DefaultPlanPhasePriceOverride implements PlanPhasePriceOverride {
     @Override
     public BigDecimal getRecurringPrice() {
         return recurringPrice;
+    }
+
+    @Override
+    public List<UsagePriceOverride> getUsagePriceOverrides() {
+        return null;
     }
 }
