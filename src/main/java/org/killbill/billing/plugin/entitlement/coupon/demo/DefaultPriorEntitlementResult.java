@@ -26,9 +26,9 @@ import org.killbill.billing.payment.api.PluginProperty;
 
 public class DefaultPriorEntitlementResult implements PriorEntitlementResult {
 
-    private List<BaseEntitlementWithAddOnsSpecifier> overrides;
+    private final List<BaseEntitlementWithAddOnsSpecifier> overrides;
 
-    public DefaultPriorEntitlementResult(List<BaseEntitlementWithAddOnsSpecifier> overrides) {
+    public DefaultPriorEntitlementResult(final List<BaseEntitlementWithAddOnsSpecifier> overrides) {
         this.overrides = overrides;
     }
 
