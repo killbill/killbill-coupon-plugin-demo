@@ -147,10 +147,10 @@ public class CouponDemoEntitlementPluginApi implements EntitlementPluginApi {
         return null;
     }
 
-    private PluginProperty findCouponProperty(@Nullable final Iterable<PluginProperty> pluginProperties) {
+    private PluginProperty findCouponProperty(final Iterable<PluginProperty> pluginProperties) {
         return Iterables.tryFind(pluginProperties, new Predicate<PluginProperty>() {
             @Override
-            public boolean apply(@Nullable PluginProperty input) {
+            public boolean apply(PluginProperty input) {
                 return input.getKey().equals(COUPON_PROPERTY);
             }
         }).orNull();
